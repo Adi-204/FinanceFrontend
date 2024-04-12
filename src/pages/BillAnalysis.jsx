@@ -21,7 +21,6 @@ const BillAnalysis = () => {
     const [error,setError] = useState("");
 
     const allowedMimeTypes = ['image/png', 'image/jpeg', 'image/webp', 'image/heic', 'image/heif'];
-    const maxFileSizeInBytes = 3 * 1024 * 1024; 
 
     useEffect(()=>{
         window.scrollTo(0,0)
@@ -29,7 +28,7 @@ const BillAnalysis = () => {
 
     const handleFileInputChange = (event) => {
         const file = event.target.files[0];
-        if (allowedMimeTypes.includes(file.type) && file.size <= maxFileSizeInBytes) {
+        if (allowedMimeTypes.includes(file.type)) {
             setSelectedFile(file);
         } else {
             alert('Please select a valid image file (PNG, JPEG, WEBP, HEIC, HEIF) with a maximum size of 3 MB.');
