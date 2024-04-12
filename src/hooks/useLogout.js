@@ -1,10 +1,11 @@
 import useAuth from "./useAuth";
 import axios from "axios";
+import { useState } from "react";
 
 const useLogout = () => {
     const { setAccessToken,setPersist } = useAuth();
     const [error,setError] = useState('');
-    
+
     const logout = async () => {
         setAccessToken(null);
         localStorage.removeItem("persist");
