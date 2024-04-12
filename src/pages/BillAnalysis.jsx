@@ -31,7 +31,6 @@ const BillAnalysis = () => {
         const file = event.target.files[0];
         if (allowedMimeTypes.includes(file.type) && file.size <= maxFileSizeInBytes) {
             setSelectedFile(file);
-            console.log(selectedFile.size);
         } else {
             alert('Please select a valid image file (PNG, JPEG, WEBP, HEIC, HEIF) with a maximum size of 3 MB.');
         }

@@ -44,7 +44,6 @@ export const Signup = () => {
             setAccessToken(accessToken);
             navigate("/user-detail",{replace : true});
         } catch (error) {
-            console.log(error);
             setError(error.response.data);
         } finally {
             setFormData({

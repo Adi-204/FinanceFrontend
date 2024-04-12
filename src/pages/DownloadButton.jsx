@@ -4,6 +4,7 @@ import useAxiosPrivate from '../hooks/useAxiosPrivate';
 
 const DownloadButton = ( {data} ) => {
 
+    const [error,setError] = useState('');
 
     const [downloading, setDownloading] = useState(false);
 
@@ -44,7 +45,7 @@ const DownloadButton = ( {data} ) => {
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(link);
             } catch (error) {
-                console.log(error);
+                setError(response?.error?.data);
             }
             finally {
                 setDownloading(false);

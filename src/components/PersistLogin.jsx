@@ -8,6 +8,7 @@ const PersistLogin = () => {
     const [isLoading, setIsLoading] = useState(true);
     const refresh = useRefreshToken();
     const { accessToken,setAccessToken } = useAuth();
+    const [error,setError] = useState('');
 
     useEffect(() => {
         const verifyRefreshToken = async () => {
@@ -16,7 +17,7 @@ const PersistLogin = () => {
                 setAccessToken(res);
             }
             catch (err) {
-                console.error(err);
+                setError(response?.error?.data);
             }
             finally {
                 setIsLoading(false);

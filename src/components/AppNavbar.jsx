@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import {
   Navbar,
   Collapse,
@@ -16,6 +16,7 @@ const AppNavbar = () => {
   const { persist, accessToken,setAccessToken } = useAuth();
   const refresh = useRefreshToken();
   const navigate = useNavigate();
+  const [error,setError] = useState('');
 
   const [openNav, setOpenNav] = React.useState(false);
   
@@ -25,7 +26,7 @@ const AppNavbar = () => {
           await logout();
           navigate('/');
       } catch (error) {
-          console.log(error);
+          setError(response?.error?.data);
       }
   }
 

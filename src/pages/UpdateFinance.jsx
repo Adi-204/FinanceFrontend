@@ -47,7 +47,6 @@ const UpdateFinance = (props) => {
                 setLoading(true);
                 const response = await api.post(`${import.meta.env.VITE_URL}/api/dashboard/finance`, formData);
                 setFinanceDetail(response.data);
-                console.log(response.data);
             } catch (error) {
                 setError(error.response.data);
             }
