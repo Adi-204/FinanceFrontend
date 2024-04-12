@@ -25,7 +25,7 @@ const ReadAloud = ({ text }) => {
     if (isPaused) {
       synth.resume();
     }
-
+    synth.cancel();
     synth.speak(utterance);
 
     setIsPaused(false);
