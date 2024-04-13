@@ -66,6 +66,10 @@ const DashBoard = () => {
     }
   },[activeTab]);
 
+  if(loading){
+    return <Loading />;
+  }
+
   const personalData = (user) => {
     return (
       <div className="flex flex-wrap items-center gap-8">
@@ -180,9 +184,6 @@ const DashBoard = () => {
     }
   ];
 
-  if(loading){
-    return <Loading />;
-  }
 
   return (
     <div className="flex justify-center h-screen mt-10 ">

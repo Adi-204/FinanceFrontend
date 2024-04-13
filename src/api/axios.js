@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://financebackend-f9v7.onrender.com';
 
 const axiosPrivate = axios.create({
     baseURL: BASE_URL,
