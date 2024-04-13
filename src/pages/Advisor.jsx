@@ -46,7 +46,7 @@ const Advisor = () => {
         const submitData = async()=>{
             try {
                 setLoading(true);
-                const response = await api.post(`${import.meta.env.VITE_URL}/api/advisor/`,goals);
+                const response = await api.post(`/api/advisor/`,goals);
                 setOutput(response.data);
             } catch (error) {
                 setError(error.response.data);

@@ -39,7 +39,7 @@ const DashBoard = () => {
         const getPersonal = async() =>{
             try {
               setLoading(true);
-              const response = await api.get(`${import.meta.env.VITE_URL}/api/dashboard/personal`);
+              const response = await api.get(`/api/dashboard/personal`);
               setPersonalDetails(response.data);
             } catch (error) {
               setError(error.response.data);
@@ -54,7 +54,7 @@ const DashBoard = () => {
         const getFinance = async () => {
             try {
                 setLoading(true);
-                const response = await api.get(`${import.meta.env.VITE_URL}/api/dashboard/finance`);
+                const response = await api.get(`/api/dashboard/finance`);
                 setFinanceDetails(response.data);
             } catch (error) {
                 setError(error.response.data);

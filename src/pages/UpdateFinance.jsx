@@ -45,7 +45,7 @@ const UpdateFinance = (props) => {
         const updateUser = async () => {
             try {
                 setLoading(true);
-                const response = await api.post(`${import.meta.env.VITE_URL}/api/dashboard/finance`, formData);
+                const response = await api.post(`/api/dashboard/finance`, formData);
                 setFinanceDetail(response.data);
             } catch (error) {
                 setError(error.response.data);

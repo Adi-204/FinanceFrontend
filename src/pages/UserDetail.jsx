@@ -55,7 +55,7 @@ const UserDetail = () => {
     const sendDetails = async () => {
       try {
         setLoading(true);
-        const response = await api.post(`${import.meta.env.VITE_URL}/api/user/getDetails`, formData);
+        const response = await api.post(`/api/user/getDetails`, formData);
         navigate('/');
       } catch (error) {
         setError(error.response.data);

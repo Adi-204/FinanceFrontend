@@ -30,7 +30,7 @@ const DownloadButton = ( {data} ) => {
         const getPdf = async() =>{
             try {
                 setDownloading(true);
-                const response = await api.post(`${import.meta.env.VITE_URL}/api/advisor/pdf`,pdfContent,{
+                const response = await api.post(`/api/advisor/pdf`,pdfContent,{
                     responseType: 'blob'
                 });
                 const blob = new Blob([response.data], { type: 'application/pdf' });

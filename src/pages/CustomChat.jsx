@@ -36,7 +36,7 @@ const CustomChat = () => {
         try {
           setLoading(true);
           setIsOutput(false);
-          const response = await api.post(`${import.meta.env.VITE_URL}/api/chatbot/custom`,formData);
+          const response = await api.post(`/api/chatbot/custom`,formData);
           setOutput(response.data);
           setIsOutput(true);
         } catch (error) {

@@ -42,7 +42,7 @@ const BillAnalysis = () => {
             formData.append('image', selectedFile);
             try {  
                 setLoading(true);
-                const response = await api.post(`${import.meta.env.VITE_URL}/api/bill/analysis`, formData, {
+                const response = await api.post(`/api/bill/analysis`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },

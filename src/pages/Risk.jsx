@@ -53,7 +53,7 @@ const Risk = () => {
     const sendDetails = async () => {
       try {
         setLoading(true);
-        const response = await api.post(`${import.meta.env.VITE_URL}/api/risk/finance`,formData);
+        const response = await api.post(`/api/risk/finance`,formData);
         navigate('/service/risk/output',{
             state : {
                 data : formData,

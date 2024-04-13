@@ -76,7 +76,7 @@ const RiskOutput = () => {
             const fetchData = async () => {
                 try {
                     setLoading(true);
-                    const response = await api.post(`${import.meta.env.VITE_URL}/api/risk/health`, data);
+                    const response = await api.post(`/api/risk/health`, data);
                     setHealthOut(response.data);
                 } catch (error) {
                     setError(error.response.data);
@@ -91,7 +91,7 @@ const RiskOutput = () => {
             const fetchData = async () => {
                 try {
                     setLoading(true);
-                    const response = await api.post(`${import.meta.env.VITE_URL}/api/risk/legal`, data);
+                    const response = await api.post(`/api/risk/legal`, data);
                     setLegalOut(response.data);
                 } catch (error) {
                     setError(error.response.data);
@@ -106,7 +106,7 @@ const RiskOutput = () => {
           const fetchData = async () => {
               try {
                   setLoading(true);
-                  const response = await api.post(`${import.meta.env.VITE_URL}/api/risk/future`, data);
+                  const response = await api.post(`/api/risk/future`, data);
                   setFutureOut(response.data);
               } catch (error) {
                   setError(error.response.data);

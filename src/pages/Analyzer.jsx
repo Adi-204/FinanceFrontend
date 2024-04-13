@@ -28,7 +28,7 @@ const Analyzer = () => {
     const getOutput = async () => {
       try {
         setLoading(true);
-        const response = await api.get(`${import.meta.env.VITE_URL}/api/chatbot/analyze`);
+        const response = await api.get(`/api/chatbot/analyze`);
         setOutput(response.data);
       } catch (error) {
         setError(error.response.data);

@@ -34,7 +34,7 @@ const UpdateUser = (props) => {
         const updateUser = async () => {
             try {
                 setLoading(true);
-                const response = await api.post(`${import.meta.env.VITE_URL}/api/dashboard/personal`,formData);
+                const response = await api.post(`/api/dashboard/personal`,formData);
                 setPersonDetail(response.data);
             } catch (error) {
                 setError(error.response.data);
