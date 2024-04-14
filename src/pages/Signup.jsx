@@ -37,7 +37,9 @@ export const Signup = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const response = await axios.post(`${import.meta.env.VITE_URL}/api/user/register`,formData);
+            const response = await axios.post(`${import.meta.env.VITE_URL}/api/user/register`,formData,{
+                withCredentials : true
+            });
             const accessToken = response.data.accessToken;
             setAccessToken(accessToken);
             navigate("/user-detail",{replace : true});
