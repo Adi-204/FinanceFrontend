@@ -40,9 +40,7 @@ export const Login = () => {
         try {
             setLoading(true);
             localStorage.setItem("persist",formData.isCheck);
-            const response = await axios.post(`${import.meta.env.VITE_URL}/api/user/login`, formData,{
-                withCredentials: true
-            });
+            const response = await axios.post(`${import.meta.env.VITE_URL}/api/user/login`, formData);
             const accessToken = response.data.accessToken;
             setAccessToken(accessToken);
             navigate(from,{replace : true});
