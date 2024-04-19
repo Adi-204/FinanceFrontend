@@ -371,7 +371,7 @@ const Risk = () => {
             </List>
             {formData.invest_losses === "Yes" &&    
                 <>
-                    <label>
+                    <label className='text-lg text-[#424242] font-growth-sans'>
                     What were your emotions after facing invesment losses?
                     </label>
                     <div className="w-72">
